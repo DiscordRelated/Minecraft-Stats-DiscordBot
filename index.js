@@ -35,7 +35,7 @@ client.on('message', status =>{
                     ms.init(MC_IP, MC_PORT, function(result){
                         status.channel.send({embed: {
                             color: 3066993,
-                            title: "Astro-life.eu ist Online",
+                            title: MINECRAFT_SERVER_NAME + " ist Online",
                             fields: [{
                                 name: "Spieler Online:",
                                 value: ms.current_players + " / " + ms.max_players
