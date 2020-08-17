@@ -15,7 +15,9 @@ const app = express()
 const port = EXPRESS_PORT;
 
 app.get('/api', (req, res) => {
-  res.send(MINECRAFT_SERVER_NAME + ' slots ' + ms.current_players + " / " + ms.max_players + ' server-ping: ' + ms.latency + 'ms')
+    ms.init(MC_IP, MC_PORT, function (result1){
+        res.send(MINECRAFT_SERVER_NAME + ' slots ' + ms.current_players + " / " + ms.max_players + ' server-ping: ' + ms.latency + 'ms')
+    })
   })
   
 app.listen(port, () => {
